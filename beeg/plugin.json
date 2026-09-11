@@ -1,0 +1,22 @@
+{
+  "packageName": "com.skystream.rated.beeg",
+  "name": "Beeg [MSR]",
+  "version": 4,
+  "baseUrl": "https://beeg.com",
+  "description": "Beeg HD adult streaming provider",
+  "authors": [
+    "MightySolarRay"
+  ],
+  "languages": [
+    "en"
+  ],
+  "categories": [
+    "Videos"
+  ],
+  "domains": [
+    {
+      "name": "beeg.com (Primary)",
+      "url": "https://beeg.com"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "packageName": "com.skystream.rated.xnxx",
+  "name": "XNXX [MSR]",
+  "version": 4,
+  "baseUrl": "https://www.xnxx.com",
+  "description": "Global and Indian adult streaming with adaptive HLS and multi-resolution MP4",
+  "authors": [
+    "MightySolarRay"
+  ],
+  "languages": [
+    "en",
+    "hi"
+  ],
+  "categories": [
+    "Videos"
+  ],
+  "domains": [
+    {
+      "name": "xnxx.com (Primary)",
+      "url": "https://www.xnxx.com"
+    },
+    {
+      "name": "xnxx.desi (Indian Regional)",
+      "url": "https://www.xnxx.desi"
+    }
+  ]
+}

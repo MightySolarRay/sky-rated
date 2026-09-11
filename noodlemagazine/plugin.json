@@ -1,0 +1,22 @@
+{
+  "packageName": "com.skystream.rated.noodlemagazine",
+  "name": "NoodleMagazine [MSR]",
+  "version": 4,
+  "baseUrl": "https://noodlemagazine.com",
+  "description": "Fast streaming video search and playlist player from NoodleMagazine",
+  "authors": [
+    "MightySolarRay"
+  ],
+  "languages": [
+    "en"
+  ],
+  "categories": [
+    "Videos"
+  ],
+  "domains": [
+    {
+      "name": "noodlemagazine.com (Primary)",
+      "url": "https://noodlemagazine.com"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "packageName": "com.skystream.rated.pornhub",
+  "name": "PornHub [MSR]",
+  "version": 4,
+  "baseUrl": "https://www.pornhub.com",
+  "description": "PornHub adult streaming provider",
+  "authors": [
+    "MightySolarRay"
+  ],
+  "languages": [
+    "en"
+  ],
+  "categories": [
+    "Videos"
+  ],
+  "domains": [
+    {
+      "name": "pornhub.com (Primary)",
+      "url": "https://www.pornhub.com"
+    }
+  ]
+}

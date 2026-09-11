@@ -1,0 +1,22 @@
+{
+  "packageName": "com.skystream.rated.youjizz",
+  "name": "YouJizz [MSR]",
+  "version": 4,
+  "baseUrl": "https://www.youjizz.com",
+  "description": "Popular, trending, and multi-resolution adult streams on YouJizz",
+  "authors": [
+    "MightySolarRay"
+  ],
+  "languages": [
+    "en"
+  ],
+  "categories": [
+    "Videos"
+  ],
+  "domains": [
+    {
+      "name": "youjizz.com (Primary)",
+      "url": "https://www.youjizz.com"
+    }
+  ]
+}

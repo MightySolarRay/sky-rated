@@ -1,0 +1,22 @@
+{
+  "packageName": "com.skystream.rated.ytboob",
+  "name": "YTBoob [MSR]",
+  "version": 4,
+  "baseUrl": "https://ytboob.com",
+  "description": "Watch trending glamour, Indian, and erotic video clips on YTBoob",
+  "authors": [
+    "MightySolarRay"
+  ],
+  "languages": [
+    "en"
+  ],
+  "categories": [
+    "Videos"
+  ],
+  "domains": [
+    {
+      "name": "ytboob.com (Primary)",
+      "url": "https://ytboob.com"
+    }
+  ]
+}

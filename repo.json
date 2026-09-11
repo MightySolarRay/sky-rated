@@ -1,0 +1,9 @@
+{
+  "name": "MightySolarRay",
+  "packageName": "com.skystream.rated",
+  "description": "SkyStream plugins repository",
+  "manifestVersion": 1,
+  "pluginLists": [
+    "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/plugins.json"
+  ]
+}

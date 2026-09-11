@@ -1,0 +1,22 @@
+{
+  "packageName": "com.skystream.rated.rule34video",
+  "name": "Rule34Video [MSR]",
+  "version": 4,
+  "baseUrl": "https://rule34video.com",
+  "description": "Rule34Video animated adult content",
+  "authors": [
+    "MightySolarRay"
+  ],
+  "languages": [
+    "en"
+  ],
+  "categories": [
+    "Videos"
+  ],
+  "domains": [
+    {
+      "name": "rule34video.com (Primary)",
+      "url": "https://rule34video.com"
+    }
+  ]
+}

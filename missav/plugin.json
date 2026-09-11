@@ -1,0 +1,28 @@
+{
+  "packageName": "com.skystream.rated.missav",
+  "name": "MissAV [MSR]",
+  "version": 4,
+  "baseUrl": "https://missav.live",
+  "description": "MissAV Asian & JAV adult streaming",
+  "authors": [
+    "MightySolarRay"
+  ],
+  "languages": [
+    "en",
+    "ja",
+    "zh"
+  ],
+  "categories": [
+    "Videos"
+  ],
+  "domains": [
+    {
+      "name": "missav.live (Primary)",
+      "url": "https://missav.live"
+    },
+    {
+      "name": "missav.ai",
+      "url": "https://missav.ai"
+    }
+  ]
+}

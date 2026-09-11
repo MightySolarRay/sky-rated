@@ -1,0 +1,23 @@
+{
+  "packageName": "com.skystream.rated.spankbang",
+  "name": "Spankbang [MSR]",
+  "version": 4,
+  "baseUrl": "https://spankbang.com",
+  "description": "Trending adult clips, studio channels and 4K streaming on Spankbang",
+  "authors": [
+    "MightySolarRay"
+  ],
+  "languages": [
+    "en",
+    "hi"
+  ],
+  "categories": [
+    "Videos"
+  ],
+  "domains": [
+    {
+      "name": "spankbang.com (Primary)",
+      "url": "https://spankbang.com"
+    }
+  ]
+}

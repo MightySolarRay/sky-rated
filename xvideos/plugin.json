@@ -1,0 +1,22 @@
+{
+  "packageName": "com.skystream.rated.xvideos",
+  "name": "xVideos [MSR]",
+  "version": 4,
+  "baseUrl": "https://www.xvideos.com",
+  "description": "xVideos adult streaming provider",
+  "authors": [
+    "MightySolarRay"
+  ],
+  "languages": [
+    "en"
+  ],
+  "categories": [
+    "Videos"
+  ],
+  "domains": [
+    {
+      "name": "xvideos.com (Primary)",
+      "url": "https://www.xvideos.com"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "packageName": "com.skystream.rated.desixflix",
+  "name": "DesiXFlix [MSR]",
+  "version": 4,
+  "baseUrl": "https://desixflix.com",
+  "description": "Indian hot web series, Ullu, ALTBalaji, and short films on DesiXFlix",
+  "authors": [
+    "MightySolarRay"
+  ],
+  "languages": [
+    "hi",
+    "en"
+  ],
+  "categories": [
+    "Videos"
+  ],
+  "domains": [
+    {
+      "name": "desixflix.com (Primary)",
+      "url": "https://desixflix.com"
+    }
+  ]
+}

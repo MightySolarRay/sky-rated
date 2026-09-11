@@ -1,0 +1,23 @@
+{
+  "packageName": "com.skystream.rated.desisins",
+  "name": "Desisins [MSR]",
+  "version": 4,
+  "baseUrl": "https://desisins.com",
+  "description": "Indian MMS, viral videos, model clips and shorts on Desisins",
+  "authors": [
+    "MightySolarRay"
+  ],
+  "languages": [
+    "hi",
+    "en"
+  ],
+  "categories": [
+    "Videos"
+  ],
+  "domains": [
+    {
+      "name": "desisins.com (Primary)",
+      "url": "https://desisins.com"
+    }
+  ]
+}

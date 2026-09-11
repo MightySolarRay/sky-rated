@@ -1,0 +1,22 @@
+{
+  "packageName": "com.skystream.rated.mangoporn",
+  "name": "MangoPorn [MSR]",
+  "version": 4,
+  "baseUrl": "https://mangoporn.net",
+  "description": "Watch HD adult full movies, studio features, and Indian videos on MangoPorn",
+  "authors": [
+    "MightySolarRay"
+  ],
+  "languages": [
+    "en"
+  ],
+  "categories": [
+    "Videos"
+  ],
+  "domains": [
+    {
+      "name": "mangoporn.net (Primary)",
+      "url": "https://mangoporn.net"
+    }
+  ]
+}

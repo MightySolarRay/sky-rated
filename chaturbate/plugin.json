@@ -1,0 +1,22 @@
+{
+  "packageName": "com.skystream.rated.chaturbate",
+  "name": "Chaturbate [MSR]",
+  "version": 4,
+  "baseUrl": "https://chaturbate.com",
+  "description": "Chaturbate live adult webcam streams",
+  "authors": [
+    "MightySolarRay"
+  ],
+  "languages": [
+    "en"
+  ],
+  "categories": [
+    "Videos"
+  ],
+  "domains": [
+    {
+      "name": "chaturbate.com (Primary)",
+      "url": "https://chaturbate.com"
+    }
+  ]
+}

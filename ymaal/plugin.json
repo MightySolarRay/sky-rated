@@ -1,0 +1,23 @@
+{
+  "packageName": "com.skystream.rated.ymaal",
+  "name": "YMaal [MSR]",
+  "version": 4,
+  "baseUrl": "https://ymaal.co",
+  "description": "Indian adult web series & clips (Ullu, Altt, Kooku, PrimePlay) on YMaal",
+  "authors": [
+    "MightySolarRay"
+  ],
+  "languages": [
+    "hi",
+    "en"
+  ],
+  "categories": [
+    "Videos"
+  ],
+  "domains": [
+    {
+      "name": "ymaal.co (Primary)",
+      "url": "https://ymaal.co"
+    }
+  ]
+}

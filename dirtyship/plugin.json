@@ -1,0 +1,22 @@
+{
+  "packageName": "com.skystream.rated.dirtyship",
+  "name": "DirtyShip [MSR]",
+  "version": 4,
+  "baseUrl": "https://dirtyship.com",
+  "description": "Watch trending OnlyFans, Indian & viral video galleries on DirtyShip",
+  "authors": [
+    "MightySolarRay"
+  ],
+  "languages": [
+    "en"
+  ],
+  "categories": [
+    "Videos"
+  ],
+  "domains": [
+    {
+      "name": "dirtyship.com (Primary)",
+      "url": "https://dirtyship.com"
+    }
+  ]
+}

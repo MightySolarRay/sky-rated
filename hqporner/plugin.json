@@ -1,0 +1,22 @@
+{
+  "packageName": "com.skystream.rated.hqporner",
+  "name": "HQPorner [MSR]",
+  "version": 4,
+  "baseUrl": "https://hqporner.com",
+  "description": "Full HD 1080p and 4K adult streaming with high quality CDN streams",
+  "authors": [
+    "MightySolarRay"
+  ],
+  "languages": [
+    "en"
+  ],
+  "categories": [
+    "Videos"
+  ],
+  "domains": [
+    {
+      "name": "hqporner.com (Primary)",
+      "url": "https://hqporner.com"
+    }
+  ]
+}

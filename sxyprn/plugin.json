@@ -1,0 +1,22 @@
+{
+  "packageName": "com.skystream.rated.sxyprn",
+  "name": "SxyPrn [MSR]",
+  "version": 4,
+  "baseUrl": "https://sxyprn.com",
+  "description": "Hardcore, trending, and viral adult clips on SxyPrn",
+  "authors": [
+    "MightySolarRay"
+  ],
+  "languages": [
+    "en"
+  ],
+  "categories": [
+    "Videos"
+  ],
+  "domains": [
+    {
+      "name": "sxyprn.com (Primary)",
+      "url": "https://sxyprn.com"
+    }
+  ]
+}

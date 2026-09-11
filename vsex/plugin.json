@@ -1,0 +1,22 @@
+{
+  "packageName": "com.skystream.rated.vsex",
+  "name": "VSex [MSR]",
+  "version": 4,
+  "baseUrl": "https://vsex.in",
+  "description": "Watch HD studio scenes and trending full adult videos on VSex",
+  "authors": [
+    "MightySolarRay"
+  ],
+  "languages": [
+    "en"
+  ],
+  "categories": [
+    "Videos"
+  ],
+  "domains": [
+    {
+      "name": "vsex.in (Primary)",
+      "url": "https://vsex.in"
+    }
+  ]
+}

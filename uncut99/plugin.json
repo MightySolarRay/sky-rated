@@ -1,0 +1,23 @@
+{
+  "packageName": "com.skystream.rated.uncut99",
+  "name": "Uncut99 [MSR]",
+  "version": 4,
+  "baseUrl": "https://uncut99.com",
+  "description": "Indian amateur and model MMS videos on Uncut99",
+  "authors": [
+    "MightySolarRay"
+  ],
+  "languages": [
+    "hi",
+    "en"
+  ],
+  "categories": [
+    "Videos"
+  ],
+  "domains": [
+    {
+      "name": "uncut99.com (Primary)",
+      "url": "https://uncut99.com"
+    }
+  ]
+}

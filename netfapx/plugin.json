@@ -1,0 +1,22 @@
+{
+  "packageName": "com.skystream.rated.netfapx",
+  "name": "NetFapX [MSR]",
+  "version": 4,
+  "baseUrl": "https://netfapx.com",
+  "description": "Diverse adult video categories with high-speed direct streams on NetFapX",
+  "authors": [
+    "MightySolarRay"
+  ],
+  "languages": [
+    "en"
+  ],
+  "categories": [
+    "Videos"
+  ],
+  "domains": [
+    {
+      "name": "netfapx.com (Primary)",
+      "url": "https://netfapx.com"
+    }
+  ]
+}

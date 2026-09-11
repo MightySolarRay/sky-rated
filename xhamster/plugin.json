@@ -1,0 +1,26 @@
+{
+  "packageName": "com.skystream.rated.xhamster",
+  "name": "xHamster [MSR]",
+  "version": 4,
+  "baseUrl": "https://xhamster.com",
+  "description": "xHamster adult streaming provider with Indian & worldwide collections",
+  "authors": [
+    "MightySolarRay"
+  ],
+  "languages": [
+    "en"
+  ],
+  "categories": [
+    "Videos"
+  ],
+  "domains": [
+    {
+      "name": "xhamster.com (Primary)",
+      "url": "https://xhamster.com"
+    },
+    {
+      "name": "xhamster.desi (Indian/Desi)",
+      "url": "https://xhamster.desi"
+    }
+  ]
+}

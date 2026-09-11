@@ -1,0 +1,22 @@
+{
+  "packageName": "com.skystream.rated.porntrex",
+  "name": "Porntrex [MSR]",
+  "version": 4,
+  "baseUrl": "https://www.porntrex.com",
+  "description": "High quality video categories and 4K streaming on Porntrex",
+  "authors": [
+    "MightySolarRay"
+  ],
+  "languages": [
+    "en"
+  ],
+  "categories": [
+    "Videos"
+  ],
+  "domains": [
+    {
+      "name": "porntrex.com (Primary)",
+      "url": "https://www.porntrex.com"
+    }
+  ]
+}

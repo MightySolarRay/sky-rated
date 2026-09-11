@@ -1,0 +1,23 @@
+{
+  "packageName": "com.skystream.rated.uncutmaza",
+  "name": "UncutMaza [MSR]",
+  "version": 4,
+  "baseUrl": "https://uncutmaza.cc",
+  "description": "Indian web series, Ullu, Kooku, and Uncut originals on UncutMaza",
+  "authors": [
+    "MightySolarRay"
+  ],
+  "languages": [
+    "hi",
+    "en"
+  ],
+  "categories": [
+    "Videos"
+  ],
+  "domains": [
+    {
+      "name": "uncutmaza.cc (Primary)",
+      "url": "https://uncutmaza.cc"
+    }
+  ]
+}

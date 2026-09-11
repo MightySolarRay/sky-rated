@@ -1,0 +1,22 @@
+{
+  "packageName": "com.skystream.rated.eporner",
+  "name": "EPorner [MSR]",
+  "version": 4,
+  "baseUrl": "https://www.eporner.com",
+  "description": "EPorner HD adult video streaming",
+  "authors": [
+    "MightySolarRay"
+  ],
+  "languages": [
+    "en"
+  ],
+  "categories": [
+    "Videos"
+  ],
+  "domains": [
+    {
+      "name": "eporner.com (Primary)",
+      "url": "https://www.eporner.com"
+    }
+  ]
+}
