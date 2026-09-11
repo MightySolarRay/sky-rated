@@ -6,6 +6,24 @@
         "Referer": "https://beeg.com/"
     };
 
+
+    function getBaseUrl() {
+        if (typeof manifest !== "undefined" && manifest && manifest.baseUrl) {
+            return manifest.baseUrl.replace(/\/+$/, "");
+        }
+        return "https://beeg.com";
+    }
+
+    function createItem(s) {
+        try { return new MultimediaItem(s); } catch (e) { return s; }
+    }
+    function createEpisode(s) {
+        try { return new Episode(s); } catch (e) { return s; }
+    }
+    function createStream(s) {
+        try { return new StreamResult(s); } catch (e) { return s; }
+    }
+
     function parseApiItem(item) {
         try {
             const id = item.id || (item.file && item.file.id);
@@ -24,7 +42,7 @@
 
             const posterUrl = `https://thumbs.externulls.com/photos/${id}/preview.webp`;
 
-            return new MultimediaItem({
+            return createItem({
                 title: title.trim(),
                 url: `https://beeg.com/${id}###${hls}`,
                 posterUrl,
@@ -120,7 +138,7 @@
 
             cb({
                 success: true,
-                data: new MultimediaItem({
+                data: createItem({
                     title: title.trim(),
                     url: `${cleanUrl}###${cachedHls}`,
                     posterUrl: `https://thumbs.externulls.com/photos/${id}/preview.webp`,
@@ -129,7 +147,7 @@
                     tags,
                     isAdult: false,
                     episodes: [
-                        new Episode({
+                        createEpisode({
                             name: title.trim() || "Play Video",
                             url: `${cleanUrl}###${cachedHls}`,
                             season: 1,
@@ -171,7 +189,7 @@
             cb({
                 success: true,
                 data: [
-                    new StreamResult({
+                    createStream({
                         url: `https://video.beeg.com/${hls}`,
                         source: "Beeg · HLS Adaptive",
                         headers: {

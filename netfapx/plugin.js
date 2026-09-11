@@ -5,10 +5,28 @@
         "Accept-Language": "en-US,en;q=0.9"
     };
 
+
+    function getBaseUrl() {
+        if (typeof manifest !== "undefined" && manifest && manifest.baseUrl) {
+            return manifest.baseUrl.replace(/\/+$/, "");
+        }
+        return "https://netfapx.com";
+    }
+
+    function createItem(s) {
+        try { return new MultimediaItem(s); } catch (e) { return s; }
+    }
+    function createEpisode(s) {
+        try { return new Episode(s); } catch (e) { return s; }
+    }
+    function createStream(s) {
+        try { return new StreamResult(s); } catch (e) { return s; }
+    }
+
     function fixUrl(url) {
         if (!url) return "";
         if (url.startsWith("//")) return "https:" + url;
-        if (url.startsWith("/")) return manifest.baseUrl + url;
+        if (url.startsWith("/")) return getBaseUrl() + url;
         return url;
     }
 
@@ -29,13 +47,13 @@
             }
             posterUrl = fixUrl(posterUrl);
 
-            return new MultimediaItem({
+            return createItem({
                 title,
                 url: fullUrl,
                 posterUrl,
                 type: "movie",
                 isAdult: false,
-                                headers: { "Referer": `${manifest.baseUrl}/` }
+                                headers: { "Referer": `${getBaseUrl()}/` }
             });
         } catch (e) {
             return null;
@@ -56,7 +74,7 @@
             const homeData = {};
             await Promise.all(sections.map(async (sec) => {
                 try {
-                    const res = await http_get(`${manifest.baseUrl}${sec.path}`, { headers: DEFAULT_HEADERS });
+                    const res = await http_get(`${getBaseUrl()}${sec.path}`, { headers: DEFAULT_HEADERS });
                     if (!res || !res.body) return;
                     const doc = await parseHtml(res.body);
                     const blocks = Array.from(doc.querySelectorAll("article"));
@@ -77,7 +95,7 @@
     async function search(query, cb) {
         try {
             const encoded = encodeURIComponent(query);
-            const searchUrl = `${manifest.baseUrl}/page/1/?s=${encoded}`;
+            const searchUrl = `${getBaseUrl()}/page/1/?s=${encoded}`;
             const res = await http_get(searchUrl, { headers: DEFAULT_HEADERS });
             if (!res || !res.body) {
                 return cb({ success: false, errorCode: "EMPTY_SEARCH", message: "No data received" });
@@ -107,7 +125,7 @@
 
             cb({
                 success: true,
-                data: new MultimediaItem({
+                data: createItem({
                     title,
                     url,
                     posterUrl: poster,
@@ -116,7 +134,7 @@
                     tags,
                     isAdult: false,
                     episodes: [
-                        new Episode({
+                        createEpisode({
                             name: title || "Play Video",
                             url: url,
                             season: 1,
@@ -124,7 +142,7 @@
                             posterUrl: poster || ""
                         })
                     ],
-                                        headers: { "Referer": `${manifest.baseUrl}/` }
+                                        headers: { "Referer": `${getBaseUrl()}/` }
                 })
             });
         } catch (e) {
@@ -148,19 +166,19 @@
             if (postIdMatch && postIdMatch[1]) {
                 const postId = postIdMatch[1];
                 try {
-                    const ajaxRes = await http_post(`${manifest.baseUrl}/wp-admin/admin-ajax.php`, {
+                    const ajaxRes = await http_post(`${getBaseUrl()}/wp-admin/admin-ajax.php`, {
                         headers: {
                             "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
                             "X-Requested-With": "XMLHttpRequest",
                             "Referer": url,
-                            "Origin": manifest.baseUrl
+                            "Origin": getBaseUrl()
                         },
                         body: `action=get_video_url&idpost=${postId}`
                     });
                     if (ajaxRes && ajaxRes.body) {
                         const streamUrl = ajaxRes.body.trim();
                         if (streamUrl.startsWith("http")) {
-                            streams.push(new StreamResult({
+                            streams.push(createStream({
                                 url: streamUrl,
                                 source: "NetFapX · Video Stream",
                                 headers: {
@@ -178,7 +196,7 @@
             for (const v of videoSources) {
                 const src = v.getAttribute("src");
                 if (src) {
-                    streams.push(new StreamResult({
+                    streams.push(createStream({
                         url: fixUrl(src),
                         source: "NetFapX · Direct Video",
                         headers: { "Referer": url }

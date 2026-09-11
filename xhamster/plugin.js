@@ -6,10 +6,28 @@
         "Cookie": "video_titles_translation=0"
     };
 
+
+    function getBaseUrl() {
+        if (typeof manifest !== "undefined" && manifest && manifest.baseUrl) {
+            return manifest.baseUrl.replace(/\/+$/, "");
+        }
+        return "https://xhamster.com";
+    }
+
+    function createItem(s) {
+        try { return new MultimediaItem(s); } catch (e) { return s; }
+    }
+    function createEpisode(s) {
+        try { return new Episode(s); } catch (e) { return s; }
+    }
+    function createStream(s) {
+        try { return new StreamResult(s); } catch (e) { return s; }
+    }
+
     function fixUrl(url) {
         if (!url) return "";
         if (url.startsWith("//")) return "https:" + url;
-        if (url.startsWith("/")) return manifest.baseUrl + url;
+        if (url.startsWith("/")) return getBaseUrl() + url;
         return url;
     }
 
@@ -37,14 +55,14 @@
                 else if (parts.length === 3) duration = (parts[0] * 60) + parts[1];
             }
 
-            return new MultimediaItem({
+            return createItem({
                 title,
                 url: fullUrl,
                 posterUrl,
                 type: "movie",
                 duration,
                 isAdult: false,
-                                headers: { "Referer": manifest.baseUrl }
+                                headers: { "Referer": getBaseUrl() }
             });
         } catch (e) {
             return null;
@@ -70,7 +88,7 @@
             const homeData = {};
             await Promise.all(sections.map(async (sec) => {
                 try {
-                    const res = await http_get(`${manifest.baseUrl}${sec.path}`, { headers: DEFAULT_HEADERS });
+                    const res = await http_get(`${getBaseUrl()}${sec.path}`, { headers: DEFAULT_HEADERS });
                     if (!res || !res.body) return;
                     const doc = await parseHtml(res.body);
                     const blocks = Array.from(doc.querySelectorAll("div.thumb-list div.thumb-list__item"));
@@ -91,7 +109,7 @@
     async function search(query, cb) {
         try {
             const cleanQuery = query.replace(/\s+/g, "+");
-            const searchUrl = `${manifest.baseUrl}/search/${cleanQuery}/?page=1&x_platform_switch=desktop&geo=us`;
+            const searchUrl = `${getBaseUrl()}/search/${cleanQuery}/?page=1&x_platform_switch=desktop&geo=us`;
             const res = await http_get(searchUrl, { headers: DEFAULT_HEADERS });
             if (!res || !res.body) {
                 return cb({ success: false, errorCode: "EMPTY_SEARCH", message: "No data received" });
@@ -150,20 +168,20 @@
                 const linkEl = item.querySelector("a[data-role='thumb-link']");
                 const imgEl = item.querySelector("img");
                 if (nameEl && linkEl) {
-                    recs.push(new MultimediaItem({
+                    recs.push(createItem({
                         title: nameEl.textContent.trim(),
                         url: fixUrl(linkEl.getAttribute("href")),
                         posterUrl: fixUrl(imgEl ? (imgEl.getAttribute("src") || imgEl.getAttribute("data-src")) : ""),
                         type: "movie",
                         isAdult: false,
-                                                headers: { "Referer": manifest.baseUrl }
+                                                headers: { "Referer": getBaseUrl() }
                     }));
                 }
             });
 
             cb({
                 success: true,
-                data: new MultimediaItem({
+                data: createItem({
                     title: title.trim(),
                     url,
                     posterUrl,
@@ -174,7 +192,7 @@
                                         cast: actors,
                     recommendations: recs,
                     episodes: [
-                        new Episode({
+                        createEpisode({
                             name: title.trim() || "Play Video",
                             url: url,
                             season: 1,
@@ -182,7 +200,7 @@
                             posterUrl: posterUrl || ""
                         })
                     ],
-                    headers: { "Referer": manifest.baseUrl }
+                    headers: { "Referer": getBaseUrl() }
                 })
             });
         } catch (e) {
@@ -206,7 +224,7 @@
             for (const link of preloadLinks) {
                 const href = link.getAttribute("href");
                 if (href && href.includes(".m3u8")) {
-                    streams.push(new StreamResult({
+                    streams.push(createStream({
                         url: fixUrl(href),
                         source: "xHamster · HLS Auto",
                         headers: {
@@ -224,7 +242,7 @@
                     const parsed = JSON.parse(initialsMatch[1]);
                     const sources = parsed?.xplayerSettings?.sources;
                     if (sources?.hls?.h264?.url) {
-                        streams.push(new StreamResult({
+                        streams.push(createStream({
                             url: fixUrl(sources.hls.h264.url),
                             source: "xHamster · HLS Master",
                             headers: {
@@ -236,7 +254,7 @@
                     if (Array.isArray(sources?.standard?.h264)) {
                         sources.standard.h264.forEach(st => {
                             if (st.url) {
-                                streams.push(new StreamResult({
+                                streams.push(createStream({
                                     url: fixUrl(st.url),
                                     source: `xHamster · ${st.quality || "MP4"}`,
                                     headers: {

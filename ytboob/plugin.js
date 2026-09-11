@@ -5,10 +5,28 @@
         "Accept-Language": "en-US,en;q=0.9"
     };
 
+
+    function getBaseUrl() {
+        if (typeof manifest !== "undefined" && manifest && manifest.baseUrl) {
+            return manifest.baseUrl.replace(/\/+$/, "");
+        }
+        return "https://ytboob.com";
+    }
+
+    function createItem(s) {
+        try { return new MultimediaItem(s); } catch (e) { return s; }
+    }
+    function createEpisode(s) {
+        try { return new Episode(s); } catch (e) { return s; }
+    }
+    function createStream(s) {
+        try { return new StreamResult(s); } catch (e) { return s; }
+    }
+
     function fixUrl(url) {
         if (!url) return "";
         if (url.startsWith("//")) return "https:" + url;
-        if (url.startsWith("/")) return manifest.baseUrl + url;
+        if (url.startsWith("/")) return getBaseUrl() + url;
         return url;
     }
 
@@ -47,7 +65,7 @@
                 if (!isNaN(rNum)) score = rNum / 10;
             }
 
-            return new MultimediaItem({
+            return createItem({
                 title,
                 url: fullUrl,
                 posterUrl,
@@ -55,7 +73,7 @@
                 duration,
                 score,
                 isAdult: false,
-                                headers: { "Referer": manifest.baseUrl }
+                                headers: { "Referer": getBaseUrl() }
             });
         } catch (e) {
             return null;
@@ -80,7 +98,7 @@
             const homeData = {};
             await Promise.all(sections.map(async (sec) => {
                 try {
-                    const res = await http_get(`${manifest.baseUrl}${sec.path}`, { headers: DEFAULT_HEADERS });
+                    const res = await http_get(`${getBaseUrl()}${sec.path}`, { headers: DEFAULT_HEADERS });
                     if (!res || !res.body) return;
                     const doc = await parseHtml(res.body);
                     const blocks = Array.from(doc.querySelectorAll("article.thumb-block"));
@@ -125,13 +143,13 @@
                         const items = hits.map(hit => {
                             const doc = hit.document;
                             if (!doc) return null;
-                            return new MultimediaItem({
+                            return createItem({
                                 title: doc.post_title,
                                 url: fixUrl(doc.permalink),
                                 posterUrl: fixUrl(doc.post_thumbnail),
                                 type: "movie",
                                 isAdult: false,
-                                                                headers: { "Referer": manifest.baseUrl }
+                                                                headers: { "Referer": getBaseUrl() }
                             });
                         }).filter(Boolean);
                         if (items.length > 0) {
@@ -143,7 +161,7 @@
 
             // Fallback to standard web search
             const encoded = encodeURIComponent(query);
-            const searchUrl = `${manifest.baseUrl}/?s=${encoded}`;
+            const searchUrl = `${getBaseUrl()}/?s=${encoded}`;
             const res = await http_get(searchUrl, { headers: DEFAULT_HEADERS });
             if (!res || !res.body) {
                 return cb({ success: false, errorCode: "EMPTY_SEARCH", message: "No data received" });
@@ -200,7 +218,7 @@
 
             cb({
                 success: true,
-                data: new MultimediaItem({
+                data: createItem({
                     title: title.trim(),
                     url,
                     posterUrl,
@@ -212,7 +230,7 @@
                     isAdult: false,
                                         recommendations: recs,
                     episodes: [
-                        new Episode({
+                        createEpisode({
                             name: title.trim() || "Play Video",
                             url: url,
                             season: 1,
@@ -220,7 +238,7 @@
                             posterUrl: posterUrl || ""
                         })
                     ],
-                    headers: { "Referer": manifest.baseUrl }
+                    headers: { "Referer": getBaseUrl() }
                 })
             });
         } catch (e) {
@@ -255,11 +273,11 @@
             cb({
                 success: true,
                 data: [
-                    new StreamResult({
+                    createStream({
                         url: fixUrl(videoUrl),
                         source: "YTBoob · Direct Video",
                         headers: {
-                            "Referer": `${manifest.baseUrl}/`,
+                            "Referer": `${getBaseUrl()}/`,
                             "User-Agent": DEFAULT_HEADERS["User-Agent"]
                         }
                     })

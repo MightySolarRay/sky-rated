@@ -4,10 +4,28 @@
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
     };
 
+
+    function getBaseUrl() {
+        if (typeof manifest !== "undefined" && manifest && manifest.baseUrl) {
+            return manifest.baseUrl.replace(/\/+$/, "");
+        }
+        return "https://rule34video.com";
+    }
+
+    function createItem(s) {
+        try { return new MultimediaItem(s); } catch (e) { return s; }
+    }
+    function createEpisode(s) {
+        try { return new Episode(s); } catch (e) { return s; }
+    }
+    function createStream(s) {
+        try { return new StreamResult(s); } catch (e) { return s; }
+    }
+
     function fixUrl(url) {
         if (!url) return "";
         if (url.startsWith("//")) return "https:" + url;
-        if (url.startsWith("/")) return manifest.baseUrl + url;
+        if (url.startsWith("/")) return getBaseUrl() + url;
         return url;
     }
 
@@ -32,14 +50,14 @@
                 if (parts.length === 2) duration = parseInt(parts[0], 10) * 60 + parseInt(parts[1], 10);
             }
 
-            return new MultimediaItem({
+            return createItem({
                 title,
                 url: fullUrl,
                 posterUrl,
                 type: "anime",
                 duration,
                 isAdult: false,
-                                headers: { "Referer": manifest.baseUrl }
+                                headers: { "Referer": getBaseUrl() }
             });
         } catch (_) {
             return null;
@@ -58,7 +76,7 @@
             const homeData = {};
             await Promise.all(categories.map(async (cat) => {
                 try {
-                    const res = await http_get(`${manifest.baseUrl}${cat.path}`, { headers: DEFAULT_HEADERS });
+                    const res = await http_get(`${getBaseUrl()}${cat.path}`, { headers: DEFAULT_HEADERS });
                     if (!res || !res.body) return;
                     const doc = await parseHtml(res.body);
                     const items = Array.from(doc.querySelectorAll("div.item.thumb")).map(parseBlock).filter(Boolean).slice(0, 16);
@@ -76,7 +94,7 @@
 
     async function search(query, cb) {
         try {
-            const searchUrl = `${manifest.baseUrl}/search/${encodeURIComponent(query)}/?temp_skip_items=tag:8754`;
+            const searchUrl = `${getBaseUrl()}/search/${encodeURIComponent(query)}/?temp_skip_items=tag:8754`;
             const res = await http_get(searchUrl, { headers: DEFAULT_HEADERS });
             if (!res || !res.body) {
                 return cb({ success: false, errorCode: "EMPTY_SEARCH", message: "No data received" });
@@ -113,7 +131,7 @@
 
             cb({
                 success: true,
-                data: new MultimediaItem({
+                data: createItem({
                     title,
                     url,
                     posterUrl,
@@ -124,7 +142,7 @@
                     isAdult: false,
                                         cast: actors,
                     episodes: [
-                        new Episode({
+                        createEpisode({
                             name: title || "Play Video",
                             url: url,
                             season: 1,
@@ -132,7 +150,7 @@
                             posterUrl: posterUrl || ""
                         })
                     ],
-                    headers: { "Referer": manifest.baseUrl }
+                    headers: { "Referer": getBaseUrl() }
                 })
             });
         } catch (e) {
@@ -169,11 +187,11 @@
                 else if (link.includes("480p")) quality = "480p";
                 else if (link.includes("360p")) quality = "360p";
 
-                streams.push(new StreamResult({
+                streams.push(createStream({
                     url: link,
                     source: `Rule34Video · ${quality}`,
                     headers: {
-                        "Referer": `${manifest.baseUrl}/`,
+                        "Referer": `${getBaseUrl()}/`,
                         "User-Agent": DEFAULT_HEADERS["User-Agent"]
                     }
                 }));

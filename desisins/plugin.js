@@ -5,10 +5,28 @@
         "Accept-Language": "en-US,en;q=0.9"
     };
 
+
+    function getBaseUrl() {
+        if (typeof manifest !== "undefined" && manifest && manifest.baseUrl) {
+            return manifest.baseUrl.replace(/\/+$/, "");
+        }
+        return "https://desisins.com";
+    }
+
+    function createItem(s) {
+        try { return new MultimediaItem(s); } catch (e) { return s; }
+    }
+    function createEpisode(s) {
+        try { return new Episode(s); } catch (e) { return s; }
+    }
+    function createStream(s) {
+        try { return new StreamResult(s); } catch (e) { return s; }
+    }
+
     function fixUrl(url) {
         if (!url) return "";
         if (url.startsWith("//")) return "https:" + url;
-        if (url.startsWith("/")) return manifest.baseUrl + url;
+        if (url.startsWith("/")) return getBaseUrl() + url;
         return url;
     }
 
@@ -28,13 +46,13 @@
             }
             posterUrl = fixUrl(posterUrl);
 
-            return new MultimediaItem({
+            return createItem({
                 title,
                 url: fullUrl,
                 posterUrl,
                 type: "movie",
                 isAdult: false,
-                                headers: { "Referer": manifest.baseUrl }
+                                headers: { "Referer": getBaseUrl() }
             });
         } catch (e) {
             return null;
@@ -63,14 +81,14 @@
     async function getHome(cb) {
         try {
             const cats = [
-                { name: "Trending MMS", base: manifest.baseUrl, id: 4 },
+                { name: "Trending MMS", base: getBaseUrl(), id: 4 },
                 { name: "Desi Shorts", base: "https://shorts.desisins.com", id: -1 },
-                { name: "Viral Indian", base: manifest.baseUrl, id: 19 },
-                { name: "Desi Models", base: manifest.baseUrl, id: 2 },
-                { name: "Solo Desi", base: manifest.baseUrl, id: 8 },
-                { name: "Live Show", base: manifest.baseUrl, id: 7 },
-                { name: "Roleplay", base: manifest.baseUrl, id: 426 },
-                { name: "Premium Desi", base: manifest.baseUrl, id: 668 }
+                { name: "Viral Indian", base: getBaseUrl(), id: 19 },
+                { name: "Desi Models", base: getBaseUrl(), id: 2 },
+                { name: "Solo Desi", base: getBaseUrl(), id: 8 },
+                { name: "Live Show", base: getBaseUrl(), id: 7 },
+                { name: "Roleplay", base: getBaseUrl(), id: 426 },
+                { name: "Premium Desi", base: getBaseUrl(), id: 668 }
             ];
 
             const homeData = {};
@@ -83,7 +101,7 @@
 
             // If empty ajax response, fallback to homepage scraping
             if (Object.keys(homeData).length === 0) {
-                const res = await http_get(manifest.baseUrl, { headers: DEFAULT_HEADERS });
+                const res = await http_get(getBaseUrl(), { headers: DEFAULT_HEADERS });
                 if (res && res.body) {
                     const doc = await parseHtml(res.body);
                     const posts = Array.from(doc.querySelectorAll("div.home_post_cont, article.post"));
@@ -103,7 +121,7 @@
     async function search(query, cb) {
         try {
             const encoded = encodeURIComponent(query);
-            const res = await http_get(`${manifest.baseUrl}/?s=${encoded}`, { headers: DEFAULT_HEADERS });
+            const res = await http_get(`${getBaseUrl()}/?s=${encoded}`, { headers: DEFAULT_HEADERS });
             if (!res || !res.body) {
                 return cb({ success: false, errorCode: "EMPTY_SEARCH", message: "No data received" });
             }
@@ -133,7 +151,7 @@
 
             cb({
                 success: true,
-                data: new MultimediaItem({
+                data: createItem({
                     title: title.trim(),
                     url,
                     posterUrl: fixUrl(metaPoster),
@@ -141,7 +159,7 @@
                     description: desc.trim(),
                     isAdult: false,
                     episodes: [
-                        new Episode({
+                        createEpisode({
                             name: title.trim() || "Play Video",
                             url: url,
                             season: 1,
@@ -149,7 +167,7 @@
                             posterUrl: fixUrl(metaPoster) || ""
                         })
                     ],
-                                        headers: { "Referer": manifest.baseUrl }
+                                        headers: { "Referer": getBaseUrl() }
                 })
             });
         } catch (e) {
@@ -175,11 +193,11 @@
             const streams = [];
             if (luluDocId) {
                 const luluUrl = `https://lulustream.com/e/${luluDocId}`;
-                streams.push(new StreamResult({
+                streams.push(createStream({
                     url: luluUrl,
                     source: "Desisins · LuluStream",
                     headers: {
-                        "Referer": `${manifest.baseUrl}/`,
+                        "Referer": `${getBaseUrl()}/`,
                         "User-Agent": DEFAULT_HEADERS["User-Agent"]
                     }
                 }));
@@ -190,7 +208,7 @@
             if (iframe) {
                 const src = iframe.getAttribute("src");
                 if (src) {
-                    streams.push(new StreamResult({
+                    streams.push(createStream({
                         url: fixUrl(src),
                         source: "Desisins · Embed Player",
                         headers: {

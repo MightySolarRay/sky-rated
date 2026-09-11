@@ -5,18 +5,36 @@
         "X-Requested-With": "XMLHttpRequest"
     };
 
+
+    function getBaseUrl() {
+        if (typeof manifest !== "undefined" && manifest && manifest.baseUrl) {
+            return manifest.baseUrl.replace(/\/+$/, "");
+        }
+        return "https://chaturbate.com";
+    }
+
+    function createItem(s) {
+        try { return new MultimediaItem(s); } catch (e) { return s; }
+    }
+    function createEpisode(s) {
+        try { return new Episode(s); } catch (e) { return s; }
+    }
+    function createStream(s) {
+        try { return new StreamResult(s); } catch (e) { return s; }
+    }
+
     function parseRoom(room) {
         try {
             if (!room.username) return null;
             if (room.gender === "s" || room.gender === "m") return null;
 
-            return new MultimediaItem({
+            return createItem({
                 title: `${room.username} ${room.subject ? "· " + room.subject : ""}`.trim(),
-                url: `${manifest.baseUrl}/${room.username}`,
+                url: `${getBaseUrl()}/${room.username}`,
                 posterUrl: room.img || "",
                 type: "livestream",
                 isAdult: false,
-                                headers: { "Referer": `${manifest.baseUrl}/` }
+                                headers: { "Referer": `${getBaseUrl()}/` }
             });
         } catch (_) {
             return null;
@@ -40,7 +58,7 @@
             const homeData = {};
             await Promise.all(categories.map(async (cat) => {
                 try {
-                    const res = await http_get(`${manifest.baseUrl}${cat.path}`, { headers: DEFAULT_HEADERS });
+                    const res = await http_get(`${getBaseUrl()}${cat.path}`, { headers: DEFAULT_HEADERS });
                     if (!res || !res.body) return;
                     const parsed = JSON.parse(res.body);
                     const rooms = parsed.rooms || [];
@@ -59,7 +77,7 @@
 
     async function search(query, cb) {
         try {
-            const searchUrl = `${manifest.baseUrl}/api/ts/roomlist/room-list/?keywords=${encodeURIComponent(query)}&limit=60&offset=0`;
+            const searchUrl = `${getBaseUrl()}/api/ts/roomlist/room-list/?keywords=${encodeURIComponent(query)}&limit=60&offset=0`;
             const res = await http_get(searchUrl, { headers: DEFAULT_HEADERS });
             if (!res || !res.body) {
                 return cb({ success: false, errorCode: "EMPTY_SEARCH", message: "No data received" });
@@ -75,7 +93,7 @@
 
     async function load(url, cb) {
         try {
-            const res = await http_get(url, { headers: { ...DEFAULT_HEADERS, "Referer": `${manifest.baseUrl}/` } });
+            const res = await http_get(url, { headers: { ...DEFAULT_HEADERS, "Referer": `${getBaseUrl()}/` } });
             if (!res || !res.body) {
                 return cb({ success: false, errorCode: "LOAD_ERROR", message: "Failed to load room" });
             }
@@ -87,7 +105,7 @@
 
             cb({
                 success: true,
-                data: new MultimediaItem({
+                data: createItem({
                     title,
                     url,
                     posterUrl: poster,
@@ -95,7 +113,7 @@
                     description: desc.trim(),
                     isAdult: false,
                     episodes: [
-                        new Episode({
+                        createEpisode({
                             name: title || "Play Video",
                             url: url,
                             season: 1,
@@ -103,7 +121,7 @@
                             posterUrl: poster || ""
                         })
                     ],
-                                        headers: { "Referer": `${manifest.baseUrl}/` }
+                                        headers: { "Referer": `${getBaseUrl()}/` }
                 })
             });
         } catch (e) {
@@ -141,11 +159,11 @@
             cb({
                 success: true,
                 data: [
-                    new StreamResult({
+                    createStream({
                         url: m3u8Url,
                         source: "Chaturbate · Live HLS",
                         headers: {
-                            "Referer": `${manifest.baseUrl}/`,
+                            "Referer": `${getBaseUrl()}/`,
                             "User-Agent": DEFAULT_HEADERS["User-Agent"]
                         }
                     })

@@ -1,622 +1,622 @@
 [
-  {
-    "packageName": "com.skystream.rated.beeg",
-    "name": "Beeg [MSR]",
-    "version": 4,
-    "baseUrl": "https://beeg.com",
-    "description": "Beeg HD adult streaming provider",
-    "authors": [
-      "MightySolarRay"
-    ],
-    "languages": [
-      "en"
-    ],
-    "categories": [
-      "Videos"
-    ],
-    "domains": [
-      {
-        "name": "beeg.com (Primary)",
-        "url": "https://beeg.com"
-      }
-    ],
-    "url": "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.beeg.sky"
-  },
-  {
-    "packageName": "com.skystream.rated.chaturbate",
-    "name": "Chaturbate [MSR]",
-    "version": 4,
-    "baseUrl": "https://chaturbate.com",
-    "description": "Chaturbate live adult webcam streams",
-    "authors": [
-      "MightySolarRay"
-    ],
-    "languages": [
-      "en"
-    ],
-    "categories": [
-      "Videos"
-    ],
-    "domains": [
-      {
-        "name": "chaturbate.com (Primary)",
-        "url": "https://chaturbate.com"
-      }
-    ],
-    "url": "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.chaturbate.sky"
-  },
-  {
-    "packageName": "com.skystream.rated.desisins",
-    "name": "Desisins [MSR]",
-    "version": 4,
-    "baseUrl": "https://desisins.com",
-    "description": "Indian MMS, viral videos, model clips and shorts on Desisins",
-    "authors": [
-      "MightySolarRay"
-    ],
-    "languages": [
-      "hi",
-      "en"
-    ],
-    "categories": [
-      "Videos"
-    ],
-    "domains": [
-      {
-        "name": "desisins.com (Primary)",
-        "url": "https://desisins.com"
-      }
-    ],
-    "url": "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.desisins.sky"
-  },
-  {
-    "packageName": "com.skystream.rated.desixflix",
-    "name": "DesiXFlix [MSR]",
-    "version": 4,
-    "baseUrl": "https://desixflix.com",
-    "description": "Indian hot web series, Ullu, ALTBalaji, and short films on DesiXFlix",
-    "authors": [
-      "MightySolarRay"
-    ],
-    "languages": [
-      "hi",
-      "en"
-    ],
-    "categories": [
-      "Videos"
-    ],
-    "domains": [
-      {
-        "name": "desixflix.com (Primary)",
-        "url": "https://desixflix.com"
-      }
-    ],
-    "url": "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.desixflix.sky"
-  },
-  {
-    "packageName": "com.skystream.rated.dirtyship",
-    "name": "DirtyShip [MSR]",
-    "version": 4,
-    "baseUrl": "https://dirtyship.com",
-    "description": "Watch trending OnlyFans, Indian & viral video galleries on DirtyShip",
-    "authors": [
-      "MightySolarRay"
-    ],
-    "languages": [
-      "en"
-    ],
-    "categories": [
-      "Videos"
-    ],
-    "domains": [
-      {
-        "name": "dirtyship.com (Primary)",
-        "url": "https://dirtyship.com"
-      }
-    ],
-    "url": "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.dirtyship.sky"
-  },
-  {
-    "packageName": "com.skystream.rated.eporner",
-    "name": "EPorner [MSR]",
-    "version": 4,
-    "baseUrl": "https://www.eporner.com",
-    "description": "EPorner HD adult video streaming",
-    "authors": [
-      "MightySolarRay"
-    ],
-    "languages": [
-      "en"
-    ],
-    "categories": [
-      "Videos"
-    ],
-    "domains": [
-      {
-        "name": "eporner.com (Primary)",
-        "url": "https://www.eporner.com"
-      }
-    ],
-    "url": "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.eporner.sky"
-  },
-  {
-    "packageName": "com.skystream.rated.hqporner",
-    "name": "HQPorner [MSR]",
-    "version": 4,
-    "baseUrl": "https://hqporner.com",
-    "description": "Full HD 1080p and 4K adult streaming with high quality CDN streams",
-    "authors": [
-      "MightySolarRay"
-    ],
-    "languages": [
-      "en"
-    ],
-    "categories": [
-      "Videos"
-    ],
-    "domains": [
-      {
-        "name": "hqporner.com (Primary)",
-        "url": "https://hqporner.com"
-      }
-    ],
-    "url": "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.hqporner.sky"
-  },
-  {
-    "packageName": "com.skystream.rated.mangoporn",
-    "name": "MangoPorn [MSR]",
-    "version": 4,
-    "baseUrl": "https://mangoporn.net",
-    "description": "Watch HD adult full movies, studio features, and Indian videos on MangoPorn",
-    "authors": [
-      "MightySolarRay"
-    ],
-    "languages": [
-      "en"
-    ],
-    "categories": [
-      "Videos"
-    ],
-    "domains": [
-      {
-        "name": "mangoporn.net (Primary)",
-        "url": "https://mangoporn.net"
-      }
-    ],
-    "url": "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.mangoporn.sky"
-  },
-  {
-    "packageName": "com.skystream.rated.missav",
-    "name": "MissAV [MSR]",
-    "version": 4,
-    "baseUrl": "https://missav.live",
-    "description": "MissAV Asian & JAV adult streaming",
-    "authors": [
-      "MightySolarRay"
-    ],
-    "languages": [
-      "en",
-      "ja",
-      "zh"
-    ],
-    "categories": [
-      "Videos"
-    ],
-    "domains": [
-      {
-        "name": "missav.live (Primary)",
-        "url": "https://missav.live"
-      },
-      {
-        "name": "missav.ai",
-        "url": "https://missav.ai"
-      }
-    ],
-    "url": "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.missav.sky"
-  },
-  {
-    "packageName": "com.skystream.rated.netfapx",
-    "name": "NetFapX [MSR]",
-    "version": 4,
-    "baseUrl": "https://netfapx.com",
-    "description": "Diverse adult video categories with high-speed direct streams on NetFapX",
-    "authors": [
-      "MightySolarRay"
-    ],
-    "languages": [
-      "en"
-    ],
-    "categories": [
-      "Videos"
-    ],
-    "domains": [
-      {
-        "name": "netfapx.com (Primary)",
-        "url": "https://netfapx.com"
-      }
-    ],
-    "url": "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.netfapx.sky"
-  },
-  {
-    "packageName": "com.skystream.rated.noodlemagazine",
-    "name": "NoodleMagazine [MSR]",
-    "version": 4,
-    "baseUrl": "https://noodlemagazine.com",
-    "description": "Fast streaming video search and playlist player from NoodleMagazine",
-    "authors": [
-      "MightySolarRay"
-    ],
-    "languages": [
-      "en"
-    ],
-    "categories": [
-      "Videos"
-    ],
-    "domains": [
-      {
-        "name": "noodlemagazine.com (Primary)",
-        "url": "https://noodlemagazine.com"
-      }
-    ],
-    "url": "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.noodlemagazine.sky"
-  },
-  {
-    "packageName": "com.skystream.rated.pornhub",
-    "name": "PornHub [MSR]",
-    "version": 4,
-    "baseUrl": "https://www.pornhub.com",
-    "description": "PornHub adult streaming provider",
-    "authors": [
-      "MightySolarRay"
-    ],
-    "languages": [
-      "en"
-    ],
-    "categories": [
-      "Videos"
-    ],
-    "domains": [
-      {
-        "name": "pornhub.com (Primary)",
-        "url": "https://www.pornhub.com"
-      }
-    ],
-    "url": "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.pornhub.sky"
-  },
-  {
-    "packageName": "com.skystream.rated.porntrex",
-    "name": "Porntrex [MSR]",
-    "version": 4,
-    "baseUrl": "https://www.porntrex.com",
-    "description": "High quality video categories and 4K streaming on Porntrex",
-    "authors": [
-      "MightySolarRay"
-    ],
-    "languages": [
-      "en"
-    ],
-    "categories": [
-      "Videos"
-    ],
-    "domains": [
-      {
-        "name": "porntrex.com (Primary)",
-        "url": "https://www.porntrex.com"
-      }
-    ],
-    "url": "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.porntrex.sky"
-  },
-  {
-    "packageName": "com.skystream.rated.rule34video",
-    "name": "Rule34Video [MSR]",
-    "version": 4,
-    "baseUrl": "https://rule34video.com",
-    "description": "Rule34Video animated adult content",
-    "authors": [
-      "MightySolarRay"
-    ],
-    "languages": [
-      "en"
-    ],
-    "categories": [
-      "Videos"
-    ],
-    "domains": [
-      {
-        "name": "rule34video.com (Primary)",
-        "url": "https://rule34video.com"
-      }
-    ],
-    "url": "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.rule34video.sky"
-  },
-  {
-    "packageName": "com.skystream.rated.spankbang",
-    "name": "Spankbang [MSR]",
-    "version": 4,
-    "baseUrl": "https://spankbang.com",
-    "description": "Trending adult clips, studio channels and 4K streaming on Spankbang",
-    "authors": [
-      "MightySolarRay"
-    ],
-    "languages": [
-      "en",
-      "hi"
-    ],
-    "categories": [
-      "Videos"
-    ],
-    "domains": [
-      {
-        "name": "spankbang.com (Primary)",
-        "url": "https://spankbang.com"
-      }
-    ],
-    "url": "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.spankbang.sky"
-  },
-  {
-    "packageName": "com.skystream.rated.sxyprn",
-    "name": "SxyPrn [MSR]",
-    "version": 4,
-    "baseUrl": "https://sxyprn.com",
-    "description": "Hardcore, trending, and viral adult clips on SxyPrn",
-    "authors": [
-      "MightySolarRay"
-    ],
-    "languages": [
-      "en"
-    ],
-    "categories": [
-      "Videos"
-    ],
-    "domains": [
-      {
-        "name": "sxyprn.com (Primary)",
-        "url": "https://sxyprn.com"
-      }
-    ],
-    "url": "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.sxyprn.sky"
-  },
-  {
-    "packageName": "com.skystream.rated.uncut99",
-    "name": "Uncut99 [MSR]",
-    "version": 4,
-    "baseUrl": "https://uncut99.com",
-    "description": "Indian amateur and model MMS videos on Uncut99",
-    "authors": [
-      "MightySolarRay"
-    ],
-    "languages": [
-      "hi",
-      "en"
-    ],
-    "categories": [
-      "Videos"
-    ],
-    "domains": [
-      {
-        "name": "uncut99.com (Primary)",
-        "url": "https://uncut99.com"
-      }
-    ],
-    "url": "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.uncut99.sky"
-  },
-  {
-    "packageName": "com.skystream.rated.uncutmaza",
-    "name": "UncutMaza [MSR]",
-    "version": 4,
-    "baseUrl": "https://uncutmaza.cc",
-    "description": "Indian web series, Ullu, Kooku, and Uncut originals on UncutMaza",
-    "authors": [
-      "MightySolarRay"
-    ],
-    "languages": [
-      "hi",
-      "en"
-    ],
-    "categories": [
-      "Videos"
-    ],
-    "domains": [
-      {
-        "name": "uncutmaza.cc (Primary)",
-        "url": "https://uncutmaza.cc"
-      }
-    ],
-    "url": "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.uncutmaza.sky"
-  },
-  {
-    "packageName": "com.skystream.rated.vsex",
-    "name": "VSex [MSR]",
-    "version": 4,
-    "baseUrl": "https://vsex.in",
-    "description": "Watch HD studio scenes and trending full adult videos on VSex",
-    "authors": [
-      "MightySolarRay"
-    ],
-    "languages": [
-      "en"
-    ],
-    "categories": [
-      "Videos"
-    ],
-    "domains": [
-      {
-        "name": "vsex.in (Primary)",
-        "url": "https://vsex.in"
-      }
-    ],
-    "url": "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.vsex.sky"
-  },
-  {
-    "packageName": "com.skystream.rated.xhamster",
-    "name": "xHamster [MSR]",
-    "version": 4,
-    "baseUrl": "https://xhamster.com",
-    "description": "xHamster adult streaming provider with Indian & worldwide collections",
-    "authors": [
-      "MightySolarRay"
-    ],
-    "languages": [
-      "en"
-    ],
-    "categories": [
-      "Videos"
-    ],
-    "domains": [
-      {
-        "name": "xhamster.com (Primary)",
-        "url": "https://xhamster.com"
-      },
-      {
-        "name": "xhamster.desi (Indian/Desi)",
-        "url": "https://xhamster.desi"
-      }
-    ],
-    "url": "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.xhamster.sky"
-  },
-  {
-    "packageName": "com.skystream.rated.xmaza",
-    "name": "Xmaza [MSR]",
-    "version": 4,
-    "baseUrl": "https://xmaza.net",
-    "description": "Indian web series, PrimePlay, Ullu, Kooku, and Rabbit on Xmaza",
-    "authors": [
-      "MightySolarRay"
-    ],
-    "languages": [
-      "hi",
-      "en"
-    ],
-    "categories": [
-      "Videos"
-    ],
-    "domains": [
-      {
-        "name": "xmaza.net (Primary)",
-        "url": "https://xmaza.net"
-      }
-    ],
-    "url": "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.xmaza.sky"
-  },
-  {
-    "packageName": "com.skystream.rated.xnxx",
-    "name": "XNXX [MSR]",
-    "version": 4,
-    "baseUrl": "https://www.xnxx.com",
-    "description": "Global and Indian adult streaming with adaptive HLS and multi-resolution MP4",
-    "authors": [
-      "MightySolarRay"
-    ],
-    "languages": [
-      "en",
-      "hi"
-    ],
-    "categories": [
-      "Videos"
-    ],
-    "domains": [
-      {
-        "name": "xnxx.com (Primary)",
-        "url": "https://www.xnxx.com"
-      },
-      {
-        "name": "xnxx.desi (Indian Regional)",
-        "url": "https://www.xnxx.desi"
-      }
-    ],
-    "url": "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.xnxx.sky"
-  },
-  {
-    "packageName": "com.skystream.rated.xvideos",
-    "name": "xVideos [MSR]",
-    "version": 4,
-    "baseUrl": "https://www.xvideos.com",
-    "description": "xVideos adult streaming provider",
-    "authors": [
-      "MightySolarRay"
-    ],
-    "languages": [
-      "en"
-    ],
-    "categories": [
-      "Videos"
-    ],
-    "domains": [
-      {
-        "name": "xvideos.com (Primary)",
-        "url": "https://www.xvideos.com"
-      }
-    ],
-    "url": "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.xvideos.sky"
-  },
-  {
-    "packageName": "com.skystream.rated.ymaal",
-    "name": "YMaal [MSR]",
-    "version": 4,
-    "baseUrl": "https://ymaal.co",
-    "description": "Indian adult web series & clips (Ullu, Altt, Kooku, PrimePlay) on YMaal",
-    "authors": [
-      "MightySolarRay"
-    ],
-    "languages": [
-      "hi",
-      "en"
-    ],
-    "categories": [
-      "Videos"
-    ],
-    "domains": [
-      {
-        "name": "ymaal.co (Primary)",
-        "url": "https://ymaal.co"
-      }
-    ],
-    "url": "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.ymaal.sky"
-  },
-  {
-    "packageName": "com.skystream.rated.youjizz",
-    "name": "YouJizz [MSR]",
-    "version": 4,
-    "baseUrl": "https://www.youjizz.com",
-    "description": "Popular, trending, and multi-resolution adult streams on YouJizz",
-    "authors": [
-      "MightySolarRay"
-    ],
-    "languages": [
-      "en"
-    ],
-    "categories": [
-      "Videos"
-    ],
-    "domains": [
-      {
-        "name": "youjizz.com (Primary)",
-        "url": "https://www.youjizz.com"
-      }
-    ],
-    "url": "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.youjizz.sky"
-  },
-  {
-    "packageName": "com.skystream.rated.ytboob",
-    "name": "YTBoob [MSR]",
-    "version": 4,
-    "baseUrl": "https://ytboob.com",
-    "description": "Watch trending glamour, Indian, and erotic video clips on YTBoob",
-    "authors": [
-      "MightySolarRay"
-    ],
-    "languages": [
-      "en"
-    ],
-    "categories": [
-      "Videos"
-    ],
-    "domains": [
-      {
-        "name": "ytboob.com (Primary)",
-        "url": "https://ytboob.com"
-      }
-    ],
-    "url": "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.ytboob.sky"
-  }
+    {
+        "packageName":  "com.skystream.rated.beeg",
+        "name":  "Beeg [MSR]",
+        "version":  5,
+        "baseUrl":  "https://beeg.com",
+        "description":  "Beeg HD adult streaming provider",
+        "authors":  [
+                        "MightySolarRay"
+                    ],
+        "languages":  [
+                          "en"
+                      ],
+        "categories":  [
+                           "Videos"
+                       ],
+        "domains":  [
+                        {
+                            "name":  "beeg.com (Primary)",
+                            "url":  "https://beeg.com"
+                        }
+                    ],
+        "url":  "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.beeg.sky"
+    },
+    {
+        "packageName":  "com.skystream.rated.chaturbate",
+        "name":  "Chaturbate [MSR]",
+        "version":  5,
+        "baseUrl":  "https://chaturbate.com",
+        "description":  "Chaturbate live adult webcam streams",
+        "authors":  [
+                        "MightySolarRay"
+                    ],
+        "languages":  [
+                          "en"
+                      ],
+        "categories":  [
+                           "Videos"
+                       ],
+        "domains":  [
+                        {
+                            "name":  "chaturbate.com (Primary)",
+                            "url":  "https://chaturbate.com"
+                        }
+                    ],
+        "url":  "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.chaturbate.sky"
+    },
+    {
+        "packageName":  "com.skystream.rated.desisins",
+        "name":  "Desisins [MSR]",
+        "version":  5,
+        "baseUrl":  "https://desisins.com",
+        "description":  "Indian MMS, viral videos, model clips and shorts on Desisins",
+        "authors":  [
+                        "MightySolarRay"
+                    ],
+        "languages":  [
+                          "hi",
+                          "en"
+                      ],
+        "categories":  [
+                           "Videos"
+                       ],
+        "domains":  [
+                        {
+                            "name":  "desisins.com (Primary)",
+                            "url":  "https://desisins.com"
+                        }
+                    ],
+        "url":  "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.desisins.sky"
+    },
+    {
+        "packageName":  "com.skystream.rated.desixflix",
+        "name":  "DesiXFlix [MSR]",
+        "version":  5,
+        "baseUrl":  "https://desixflix.com",
+        "description":  "Indian hot web series, Ullu, ALTBalaji, and short films on DesiXFlix",
+        "authors":  [
+                        "MightySolarRay"
+                    ],
+        "languages":  [
+                          "hi",
+                          "en"
+                      ],
+        "categories":  [
+                           "Videos"
+                       ],
+        "domains":  [
+                        {
+                            "name":  "desixflix.com (Primary)",
+                            "url":  "https://desixflix.com"
+                        }
+                    ],
+        "url":  "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.desixflix.sky"
+    },
+    {
+        "packageName":  "com.skystream.rated.dirtyship",
+        "name":  "DirtyShip [MSR]",
+        "version":  5,
+        "baseUrl":  "https://dirtyship.com",
+        "description":  "Watch trending OnlyFans, Indian \u0026 viral video galleries on DirtyShip",
+        "authors":  [
+                        "MightySolarRay"
+                    ],
+        "languages":  [
+                          "en"
+                      ],
+        "categories":  [
+                           "Videos"
+                       ],
+        "domains":  [
+                        {
+                            "name":  "dirtyship.com (Primary)",
+                            "url":  "https://dirtyship.com"
+                        }
+                    ],
+        "url":  "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.dirtyship.sky"
+    },
+    {
+        "packageName":  "com.skystream.rated.eporner",
+        "name":  "EPorner [MSR]",
+        "version":  5,
+        "baseUrl":  "https://www.eporner.com",
+        "description":  "EPorner HD adult video streaming",
+        "authors":  [
+                        "MightySolarRay"
+                    ],
+        "languages":  [
+                          "en"
+                      ],
+        "categories":  [
+                           "Videos"
+                       ],
+        "domains":  [
+                        {
+                            "name":  "eporner.com (Primary)",
+                            "url":  "https://www.eporner.com"
+                        }
+                    ],
+        "url":  "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.eporner.sky"
+    },
+    {
+        "packageName":  "com.skystream.rated.hqporner",
+        "name":  "HQPorner [MSR]",
+        "version":  5,
+        "baseUrl":  "https://hqporner.com",
+        "description":  "Full HD 1080p and 4K adult streaming with high quality CDN streams",
+        "authors":  [
+                        "MightySolarRay"
+                    ],
+        "languages":  [
+                          "en"
+                      ],
+        "categories":  [
+                           "Videos"
+                       ],
+        "domains":  [
+                        {
+                            "name":  "hqporner.com (Primary)",
+                            "url":  "https://hqporner.com"
+                        }
+                    ],
+        "url":  "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.hqporner.sky"
+    },
+    {
+        "packageName":  "com.skystream.rated.mangoporn",
+        "name":  "MangoPorn [MSR]",
+        "version":  5,
+        "baseUrl":  "https://mangoporn.net",
+        "description":  "Watch HD adult full movies, studio features, and Indian videos on MangoPorn",
+        "authors":  [
+                        "MightySolarRay"
+                    ],
+        "languages":  [
+                          "en"
+                      ],
+        "categories":  [
+                           "Videos"
+                       ],
+        "domains":  [
+                        {
+                            "name":  "mangoporn.net (Primary)",
+                            "url":  "https://mangoporn.net"
+                        }
+                    ],
+        "url":  "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.mangoporn.sky"
+    },
+    {
+        "packageName":  "com.skystream.rated.missav",
+        "name":  "MissAV [MSR]",
+        "version":  5,
+        "baseUrl":  "https://missav.live",
+        "description":  "MissAV Asian \u0026 JAV adult streaming",
+        "authors":  [
+                        "MightySolarRay"
+                    ],
+        "languages":  [
+                          "en",
+                          "ja",
+                          "zh"
+                      ],
+        "categories":  [
+                           "Videos"
+                       ],
+        "domains":  [
+                        {
+                            "name":  "missav.live (Primary)",
+                            "url":  "https://missav.live"
+                        },
+                        {
+                            "name":  "missav.ai",
+                            "url":  "https://missav.ai"
+                        }
+                    ],
+        "url":  "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.missav.sky"
+    },
+    {
+        "packageName":  "com.skystream.rated.netfapx",
+        "name":  "NetFapX [MSR]",
+        "version":  5,
+        "baseUrl":  "https://netfapx.com",
+        "description":  "Diverse adult video categories with high-speed direct streams on NetFapX",
+        "authors":  [
+                        "MightySolarRay"
+                    ],
+        "languages":  [
+                          "en"
+                      ],
+        "categories":  [
+                           "Videos"
+                       ],
+        "domains":  [
+                        {
+                            "name":  "netfapx.com (Primary)",
+                            "url":  "https://netfapx.com"
+                        }
+                    ],
+        "url":  "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.netfapx.sky"
+    },
+    {
+        "packageName":  "com.skystream.rated.noodlemagazine",
+        "name":  "NoodleMagazine [MSR]",
+        "version":  5,
+        "baseUrl":  "https://noodlemagazine.com",
+        "description":  "Fast streaming video search and playlist player from NoodleMagazine",
+        "authors":  [
+                        "MightySolarRay"
+                    ],
+        "languages":  [
+                          "en"
+                      ],
+        "categories":  [
+                           "Videos"
+                       ],
+        "domains":  [
+                        {
+                            "name":  "noodlemagazine.com (Primary)",
+                            "url":  "https://noodlemagazine.com"
+                        }
+                    ],
+        "url":  "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.noodlemagazine.sky"
+    },
+    {
+        "packageName":  "com.skystream.rated.pornhub",
+        "name":  "PornHub [MSR]",
+        "version":  5,
+        "baseUrl":  "https://www.pornhub.com",
+        "description":  "PornHub adult streaming provider",
+        "authors":  [
+                        "MightySolarRay"
+                    ],
+        "languages":  [
+                          "en"
+                      ],
+        "categories":  [
+                           "Videos"
+                       ],
+        "domains":  [
+                        {
+                            "name":  "pornhub.com (Primary)",
+                            "url":  "https://www.pornhub.com"
+                        }
+                    ],
+        "url":  "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.pornhub.sky"
+    },
+    {
+        "packageName":  "com.skystream.rated.porntrex",
+        "name":  "Porntrex [MSR]",
+        "version":  5,
+        "baseUrl":  "https://www.porntrex.com",
+        "description":  "High quality video categories and 4K streaming on Porntrex",
+        "authors":  [
+                        "MightySolarRay"
+                    ],
+        "languages":  [
+                          "en"
+                      ],
+        "categories":  [
+                           "Videos"
+                       ],
+        "domains":  [
+                        {
+                            "name":  "porntrex.com (Primary)",
+                            "url":  "https://www.porntrex.com"
+                        }
+                    ],
+        "url":  "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.porntrex.sky"
+    },
+    {
+        "packageName":  "com.skystream.rated.rule34video",
+        "name":  "Rule34Video [MSR]",
+        "version":  5,
+        "baseUrl":  "https://rule34video.com",
+        "description":  "Rule34Video animated adult content",
+        "authors":  [
+                        "MightySolarRay"
+                    ],
+        "languages":  [
+                          "en"
+                      ],
+        "categories":  [
+                           "Videos"
+                       ],
+        "domains":  [
+                        {
+                            "name":  "rule34video.com (Primary)",
+                            "url":  "https://rule34video.com"
+                        }
+                    ],
+        "url":  "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.rule34video.sky"
+    },
+    {
+        "packageName":  "com.skystream.rated.spankbang",
+        "name":  "Spankbang [MSR]",
+        "version":  5,
+        "baseUrl":  "https://spankbang.com",
+        "description":  "Trending adult clips, studio channels and 4K streaming on Spankbang",
+        "authors":  [
+                        "MightySolarRay"
+                    ],
+        "languages":  [
+                          "en",
+                          "hi"
+                      ],
+        "categories":  [
+                           "Videos"
+                       ],
+        "domains":  [
+                        {
+                            "name":  "spankbang.com (Primary)",
+                            "url":  "https://spankbang.com"
+                        }
+                    ],
+        "url":  "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.spankbang.sky"
+    },
+    {
+        "packageName":  "com.skystream.rated.sxyprn",
+        "name":  "SxyPrn [MSR]",
+        "version":  5,
+        "baseUrl":  "https://sxyprn.com",
+        "description":  "Hardcore, trending, and viral adult clips on SxyPrn",
+        "authors":  [
+                        "MightySolarRay"
+                    ],
+        "languages":  [
+                          "en"
+                      ],
+        "categories":  [
+                           "Videos"
+                       ],
+        "domains":  [
+                        {
+                            "name":  "sxyprn.com (Primary)",
+                            "url":  "https://sxyprn.com"
+                        }
+                    ],
+        "url":  "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.sxyprn.sky"
+    },
+    {
+        "packageName":  "com.skystream.rated.uncut99",
+        "name":  "Uncut99 [MSR]",
+        "version":  5,
+        "baseUrl":  "https://uncut99.com",
+        "description":  "Indian amateur and model MMS videos on Uncut99",
+        "authors":  [
+                        "MightySolarRay"
+                    ],
+        "languages":  [
+                          "hi",
+                          "en"
+                      ],
+        "categories":  [
+                           "Videos"
+                       ],
+        "domains":  [
+                        {
+                            "name":  "uncut99.com (Primary)",
+                            "url":  "https://uncut99.com"
+                        }
+                    ],
+        "url":  "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.uncut99.sky"
+    },
+    {
+        "packageName":  "com.skystream.rated.uncutmaza",
+        "name":  "UncutMaza [MSR]",
+        "version":  5,
+        "baseUrl":  "https://uncutmaza.cc",
+        "description":  "Indian web series, Ullu, Kooku, and Uncut originals on UncutMaza",
+        "authors":  [
+                        "MightySolarRay"
+                    ],
+        "languages":  [
+                          "hi",
+                          "en"
+                      ],
+        "categories":  [
+                           "Videos"
+                       ],
+        "domains":  [
+                        {
+                            "name":  "uncutmaza.cc (Primary)",
+                            "url":  "https://uncutmaza.cc"
+                        }
+                    ],
+        "url":  "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.uncutmaza.sky"
+    },
+    {
+        "packageName":  "com.skystream.rated.vsex",
+        "name":  "VSex [MSR]",
+        "version":  5,
+        "baseUrl":  "https://vsex.in",
+        "description":  "Watch HD studio scenes and trending full adult videos on VSex",
+        "authors":  [
+                        "MightySolarRay"
+                    ],
+        "languages":  [
+                          "en"
+                      ],
+        "categories":  [
+                           "Videos"
+                       ],
+        "domains":  [
+                        {
+                            "name":  "vsex.in (Primary)",
+                            "url":  "https://vsex.in"
+                        }
+                    ],
+        "url":  "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.vsex.sky"
+    },
+    {
+        "packageName":  "com.skystream.rated.xhamster",
+        "name":  "xHamster [MSR]",
+        "version":  5,
+        "baseUrl":  "https://xhamster.com",
+        "description":  "xHamster adult streaming provider with Indian \u0026 worldwide collections",
+        "authors":  [
+                        "MightySolarRay"
+                    ],
+        "languages":  [
+                          "en"
+                      ],
+        "categories":  [
+                           "Videos"
+                       ],
+        "domains":  [
+                        {
+                            "name":  "xhamster.com (Primary)",
+                            "url":  "https://xhamster.com"
+                        },
+                        {
+                            "name":  "xhamster.desi (Indian/Desi)",
+                            "url":  "https://xhamster.desi"
+                        }
+                    ],
+        "url":  "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.xhamster.sky"
+    },
+    {
+        "packageName":  "com.skystream.rated.xmaza",
+        "name":  "Xmaza [MSR]",
+        "version":  5,
+        "baseUrl":  "https://xmaza.net",
+        "description":  "Indian web series, PrimePlay, Ullu, Kooku, and Rabbit on Xmaza",
+        "authors":  [
+                        "MightySolarRay"
+                    ],
+        "languages":  [
+                          "hi",
+                          "en"
+                      ],
+        "categories":  [
+                           "Videos"
+                       ],
+        "domains":  [
+                        {
+                            "name":  "xmaza.net (Primary)",
+                            "url":  "https://xmaza.net"
+                        }
+                    ],
+        "url":  "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.xmaza.sky"
+    },
+    {
+        "packageName":  "com.skystream.rated.xnxx",
+        "name":  "XNXX [MSR]",
+        "version":  5,
+        "baseUrl":  "https://www.xnxx.com",
+        "description":  "Global and Indian adult streaming with adaptive HLS and multi-resolution MP4",
+        "authors":  [
+                        "MightySolarRay"
+                    ],
+        "languages":  [
+                          "en",
+                          "hi"
+                      ],
+        "categories":  [
+                           "Videos"
+                       ],
+        "domains":  [
+                        {
+                            "name":  "xnxx.com (Primary)",
+                            "url":  "https://www.xnxx.com"
+                        },
+                        {
+                            "name":  "xnxx.desi (Indian Regional)",
+                            "url":  "https://www.xnxx.desi"
+                        }
+                    ],
+        "url":  "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.xnxx.sky"
+    },
+    {
+        "packageName":  "com.skystream.rated.xvideos",
+        "name":  "xVideos [MSR]",
+        "version":  5,
+        "baseUrl":  "https://www.xvideos.com",
+        "description":  "xVideos adult streaming provider",
+        "authors":  [
+                        "MightySolarRay"
+                    ],
+        "languages":  [
+                          "en"
+                      ],
+        "categories":  [
+                           "Videos"
+                       ],
+        "domains":  [
+                        {
+                            "name":  "xvideos.com (Primary)",
+                            "url":  "https://www.xvideos.com"
+                        }
+                    ],
+        "url":  "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.xvideos.sky"
+    },
+    {
+        "packageName":  "com.skystream.rated.ymaal",
+        "name":  "YMaal [MSR]",
+        "version":  5,
+        "baseUrl":  "https://ymaal.co",
+        "description":  "Indian adult web series \u0026 clips (Ullu, Altt, Kooku, PrimePlay) on YMaal",
+        "authors":  [
+                        "MightySolarRay"
+                    ],
+        "languages":  [
+                          "hi",
+                          "en"
+                      ],
+        "categories":  [
+                           "Videos"
+                       ],
+        "domains":  [
+                        {
+                            "name":  "ymaal.co (Primary)",
+                            "url":  "https://ymaal.co"
+                        }
+                    ],
+        "url":  "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.ymaal.sky"
+    },
+    {
+        "packageName":  "com.skystream.rated.youjizz",
+        "name":  "YouJizz [MSR]",
+        "version":  5,
+        "baseUrl":  "https://www.youjizz.com",
+        "description":  "Popular, trending, and multi-resolution adult streams on YouJizz",
+        "authors":  [
+                        "MightySolarRay"
+                    ],
+        "languages":  [
+                          "en"
+                      ],
+        "categories":  [
+                           "Videos"
+                       ],
+        "domains":  [
+                        {
+                            "name":  "youjizz.com (Primary)",
+                            "url":  "https://www.youjizz.com"
+                        }
+                    ],
+        "url":  "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.youjizz.sky"
+    },
+    {
+        "packageName":  "com.skystream.rated.ytboob",
+        "name":  "YTBoob [MSR]",
+        "version":  5,
+        "baseUrl":  "https://ytboob.com",
+        "description":  "Watch trending glamour, Indian, and erotic video clips on YTBoob",
+        "authors":  [
+                        "MightySolarRay"
+                    ],
+        "languages":  [
+                          "en"
+                      ],
+        "categories":  [
+                           "Videos"
+                       ],
+        "domains":  [
+                        {
+                            "name":  "ytboob.com (Primary)",
+                            "url":  "https://ytboob.com"
+                        }
+                    ],
+        "url":  "https://raw.githubusercontent.com/MightySolarRay/sky-rated/main/dist/com.skystream.rated.ytboob.sky"
+    }
 ]

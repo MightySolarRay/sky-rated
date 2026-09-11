@@ -1,7 +1,7 @@
 {
   "packageName": "com.skystream.rated.noodlemagazine",
   "name": "NoodleMagazine [MSR]",
-  "version": 4,
+  "version": 5,
   "baseUrl": "https://noodlemagazine.com",
   "description": "Fast streaming video search and playlist player from NoodleMagazine",
   "authors": [

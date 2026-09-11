@@ -5,10 +5,28 @@
         "Accept-Language": "en-US,en;q=0.9"
     };
 
+
+    function getBaseUrl() {
+        if (typeof manifest !== "undefined" && manifest && manifest.baseUrl) {
+            return manifest.baseUrl.replace(/\/+$/, "");
+        }
+        return "https://uncutmaza.cc";
+    }
+
+    function createItem(s) {
+        try { return new MultimediaItem(s); } catch (e) { return s; }
+    }
+    function createEpisode(s) {
+        try { return new Episode(s); } catch (e) { return s; }
+    }
+    function createStream(s) {
+        try { return new StreamResult(s); } catch (e) { return s; }
+    }
+
     function fixUrl(url) {
         if (!url) return "";
         if (url.startsWith("//")) return "https:" + url;
-        if (url.startsWith("/")) return manifest.baseUrl + url;
+        if (url.startsWith("/")) return getBaseUrl() + url;
         return url;
     }
 
@@ -28,13 +46,13 @@
             }
             posterUrl = fixUrl(posterUrl);
 
-            return new MultimediaItem({
+            return createItem({
                 title,
                 url: fullUrl,
                 posterUrl,
                 type: "movie",
                 isAdult: false,
-                                headers: { "Referer": manifest.baseUrl }
+                                headers: { "Referer": getBaseUrl() }
             });
         } catch (e) {
             return null;
@@ -56,7 +74,7 @@
             const homeData = {};
             await Promise.all(sections.map(async (sec) => {
                 try {
-                    const res = await http_get(`${manifest.baseUrl}${sec.path}`, { headers: DEFAULT_HEADERS });
+                    const res = await http_get(`${getBaseUrl()}${sec.path}`, { headers: DEFAULT_HEADERS });
                     if (!res || !res.body) return;
                     const doc = await parseHtml(res.body);
                     const blocks = Array.from(doc.querySelectorAll("div.videos-list article.post, article.post"));
@@ -77,7 +95,7 @@
     async function search(query, cb) {
         try {
             const encoded = encodeURIComponent(query);
-            const res = await http_get(`${manifest.baseUrl}/?s=${encoded}`, { headers: DEFAULT_HEADERS });
+            const res = await http_get(`${getBaseUrl()}/?s=${encoded}`, { headers: DEFAULT_HEADERS });
             if (!res || !res.body) {
                 return cb({ success: false, errorCode: "EMPTY_SEARCH", message: "No data received" });
             }
@@ -107,7 +125,7 @@
 
             cb({
                 success: true,
-                data: new MultimediaItem({
+                data: createItem({
                     title: title.trim(),
                     url,
                     posterUrl,
@@ -115,7 +133,7 @@
                     description: desc.trim(),
                     isAdult: false,
                     episodes: [
-                        new Episode({
+                        createEpisode({
                             name: title.trim() || "Play Video",
                             url: url,
                             season: 1,
@@ -123,7 +141,7 @@
                             posterUrl: posterUrl || ""
                         })
                     ],
-                                        headers: { "Referer": manifest.baseUrl }
+                                        headers: { "Referer": getBaseUrl() }
                 })
             });
         } catch (e) {
@@ -151,7 +169,7 @@
             if (contentMeta) {
                 const streamUrl = contentMeta.getAttribute("content");
                 if (streamUrl) {
-                    streams.push(new StreamResult({
+                    streams.push(createStream({
                         url: fixUrl(streamUrl),
                         source: "UncutMaza · Direct Content",
                         headers: {
@@ -167,7 +185,7 @@
             if (iframe) {
                 const src = iframe.getAttribute("src");
                 if (src) {
-                    streams.push(new StreamResult({
+                    streams.push(createStream({
                         url: fixUrl(src),
                         source: "UncutMaza · Embed Player",
                         headers: {
@@ -180,7 +198,7 @@
 
             const videoSrc = doc.querySelector("video source, video")?.getAttribute("src");
             if (videoSrc) {
-                streams.push(new StreamResult({
+                streams.push(createStream({
                     url: fixUrl(videoSrc),
                     source: "UncutMaza · Direct Video",
                     headers: {

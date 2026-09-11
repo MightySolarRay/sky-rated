@@ -1,7 +1,7 @@
 {
   "packageName": "com.skystream.rated.beeg",
   "name": "Beeg [MSR]",
-  "version": 4,
+  "version": 5,
   "baseUrl": "https://beeg.com",
   "description": "Beeg HD adult streaming provider",
   "authors": [

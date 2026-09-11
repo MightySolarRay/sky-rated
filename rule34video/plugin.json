@@ -1,7 +1,7 @@
 {
   "packageName": "com.skystream.rated.rule34video",
   "name": "Rule34Video [MSR]",
-  "version": 4,
+  "version": 5,
   "baseUrl": "https://rule34video.com",
   "description": "Rule34Video animated adult content",
   "authors": [

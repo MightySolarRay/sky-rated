@@ -6,10 +6,28 @@
         "Referer": "https://hqporner.com/"
     };
 
+
+    function getBaseUrl() {
+        if (typeof manifest !== "undefined" && manifest && manifest.baseUrl) {
+            return manifest.baseUrl.replace(/\/+$/, "");
+        }
+        return "https://hqporner.com";
+    }
+
+    function createItem(s) {
+        try { return new MultimediaItem(s); } catch (e) { return s; }
+    }
+    function createEpisode(s) {
+        try { return new Episode(s); } catch (e) { return s; }
+    }
+    function createStream(s) {
+        try { return new StreamResult(s); } catch (e) { return s; }
+    }
+
     function fixUrl(url) {
         if (!url) return "";
         if (url.startsWith("//")) return "https:" + url;
-        if (url.startsWith("/")) return manifest.baseUrl + url;
+        if (url.startsWith("/")) return getBaseUrl() + url;
         return url;
     }
 
@@ -30,13 +48,13 @@
             }
             posterUrl = fixUrl(posterUrl);
 
-            return new MultimediaItem({
+            return createItem({
                 title,
                 url: fullUrl,
                 posterUrl,
                 type: "movie",
                 isAdult: false,
-                                headers: { "Referer": `${manifest.baseUrl}/` }
+                                headers: { "Referer": `${getBaseUrl()}/` }
             });
         } catch (e) {
             return null;
@@ -57,7 +75,7 @@
             const homeData = {};
             await Promise.all(sections.map(async (sec) => {
                 try {
-                    const res = await http_get(`${manifest.baseUrl}${sec.path}/1`, { headers: DEFAULT_HEADERS });
+                    const res = await http_get(`${getBaseUrl()}${sec.path}/1`, { headers: DEFAULT_HEADERS });
                     if (!res || !res.body) return;
                     const doc = await parseHtml(res.body);
                     const blocks = Array.from(doc.querySelectorAll("div.row section.box.feature:has(span.icon), section.box.feature"));
@@ -78,7 +96,7 @@
     async function search(query, cb) {
         try {
             const encoded = encodeURIComponent(query);
-            const searchUrl = `${manifest.baseUrl}/?q=${encoded}&p=1`;
+            const searchUrl = `${getBaseUrl()}/?q=${encoded}&p=1`;
             const res = await http_get(searchUrl, { headers: DEFAULT_HEADERS });
             if (!res || !res.body) {
                 return cb({ success: false, errorCode: "EMPTY_SEARCH", message: "No data received" });
@@ -108,7 +126,7 @@
 
             cb({
                 success: true,
-                data: new MultimediaItem({
+                data: createItem({
                     title,
                     url,
                     posterUrl,
@@ -117,7 +135,7 @@
                     tags,
                     isAdult: false,
                     episodes: [
-                        new Episode({
+                        createEpisode({
                             name: title || "Play Video",
                             url: url,
                             season: 1,
@@ -125,7 +143,7 @@
                             posterUrl: posterUrl || ""
                         })
                     ],
-                                        headers: { "Referer": `${manifest.baseUrl}/` }
+                                        headers: { "Referer": `${getBaseUrl()}/` }
                 })
             });
         } catch (e) {
@@ -154,7 +172,7 @@
                         const embedRes = await http_get(embedUrl, {
                             headers: {
                                 "User-Agent": DEFAULT_HEADERS["User-Agent"],
-                                "Referer": `${manifest.baseUrl}/`
+                                "Referer": `${getBaseUrl()}/`
                             }
                         });
                         if (embedRes && embedRes.body) {
@@ -163,7 +181,7 @@
                                 embedHtml.match(/file\s*:\s*['"]([^'"]+)['"]/i) ||
                                 embedHtml.match(/<source\s+[^>]*src=['"]([^'"]+)['"]/i);
                             if (srcMatch && srcMatch[1]) {
-                                streams.push(new StreamResult({
+                                streams.push(createStream({
                                     url: fixUrl(srcMatch[1]),
                                     source: "HQPorner · Direct",
                                     headers: {
@@ -175,7 +193,7 @@
                         }
                     } catch (_) { }
 
-                    streams.push(new StreamResult({
+                    streams.push(createStream({
                         url: embedUrl,
                         source: "HQPorner · Embed",
                         headers: {
@@ -189,7 +207,7 @@
             // 2. Direct video sources
             const videoSrc = doc.querySelector("video source, video")?.getAttribute("src");
             if (videoSrc) {
-                streams.push(new StreamResult({
+                streams.push(createStream({
                     url: fixUrl(videoSrc),
                     source: "HQPorner · Direct Video",
                     headers: {

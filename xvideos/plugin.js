@@ -5,10 +5,28 @@
         "Accept-Language": "en-US,en;q=0.9"
     };
 
+
+    function getBaseUrl() {
+        if (typeof manifest !== "undefined" && manifest && manifest.baseUrl) {
+            return manifest.baseUrl.replace(/\/+$/, "");
+        }
+        return "https://www.xvideos.com";
+    }
+
+    function createItem(s) {
+        try { return new MultimediaItem(s); } catch (e) { return s; }
+    }
+    function createEpisode(s) {
+        try { return new Episode(s); } catch (e) { return s; }
+    }
+    function createStream(s) {
+        try { return new StreamResult(s); } catch (e) { return s; }
+    }
+
     function fixUrl(url) {
         if (!url) return "";
         if (url.startsWith("//")) return "https:" + url;
-        if (url.startsWith("/")) return manifest.baseUrl + url;
+        if (url.startsWith("/")) return getBaseUrl() + url;
         return url;
     }
 
@@ -52,14 +70,14 @@
             const durEl = block.querySelector("span.duration");
             const duration = durEl ? parseDuration(durEl.textContent) : 0;
 
-            return new MultimediaItem({
+            return createItem({
                 title,
                 url: fullUrl,
                 posterUrl,
                 type: "movie",
                 duration,
                 isAdult: false,
-                                headers: { "Referer": manifest.baseUrl }
+                                headers: { "Referer": getBaseUrl() }
             });
         } catch (e) {
             return null;
@@ -86,7 +104,7 @@
             const homeData = {};
             await Promise.all(sections.map(async (sec) => {
                 try {
-                    const res = await http_get(`${manifest.baseUrl}${sec.path}`, { headers: DEFAULT_HEADERS });
+                    const res = await http_get(`${getBaseUrl()}${sec.path}`, { headers: DEFAULT_HEADERS });
                     if (!res || !res.body) return;
                     const doc = await parseHtml(res.body);
                     const blocks = Array.from(doc.querySelectorAll("div.mozaique div.thumb-block"));
@@ -107,7 +125,7 @@
     async function search(query, cb) {
         try {
             const encoded = encodeURIComponent(query);
-            const searchUrl = `${manifest.baseUrl}/?k=${encoded}`;
+            const searchUrl = `${getBaseUrl()}/?k=${encoded}`;
             const res = await http_get(searchUrl, { headers: DEFAULT_HEADERS });
             if (!res || !res.body) {
                 return cb({ success: false, errorCode: "EMPTY_SEARCH", message: "No data received" });
@@ -153,13 +171,13 @@
                     const parsedRelated = JSON.parse(relatedMatch[1]);
                     parsedRelated.slice(0, 10).forEach(item => {
                         if (item.u && item.tf) {
-                            recs.push(new MultimediaItem({
+                            recs.push(createItem({
                                 title: item.tf.replace(/\\/g, ""),
                                 url: fixUrl(cleanHref(item.u)),
                                 posterUrl: fixUrl(item.i),
                                 type: "movie",
                                 isAdult: false,
-                                                                headers: { "Referer": manifest.baseUrl }
+                                                                headers: { "Referer": getBaseUrl() }
                             }));
                         }
                     });
@@ -168,7 +186,7 @@
 
             cb({
                 success: true,
-                data: new MultimediaItem({
+                data: createItem({
                     title: title.trim(),
                     url,
                     posterUrl,
@@ -180,7 +198,7 @@
                                         cast: actors,
                     recommendations: recs,
                     episodes: [
-                        new Episode({
+                        createEpisode({
                             name: title.trim() || "Play Video",
                             url: url,
                             season: 1,
@@ -188,7 +206,7 @@
                             posterUrl: posterUrl || ""
                         })
                     ],
-                    headers: { "Referer": manifest.baseUrl }
+                    headers: { "Referer": getBaseUrl() }
                 })
             });
         } catch (e) {
@@ -208,7 +226,7 @@
 
             const hlsMatch = html.match(/html5player\.setVideoHLS\(['"]([^'"]+)['"]\)/);
             if (hlsMatch && hlsMatch[1]) {
-                streams.push(new StreamResult({
+                streams.push(createStream({
                     url: hlsMatch[1],
                     source: "xVideos · HLS Auto",
                     headers: {
@@ -220,7 +238,7 @@
 
             const highMatch = html.match(/html5player\.setVideoUrlHigh\(['"]([^'"]+)['"]\)/);
             if (highMatch && highMatch[1]) {
-                streams.push(new StreamResult({
+                streams.push(createStream({
                     url: highMatch[1],
                     source: "xVideos · 720p / High",
                     headers: {
@@ -232,7 +250,7 @@
 
             const lowMatch = html.match(/html5player\.setVideoUrlLow\(['"]([^'"]+)['"]\)/);
             if (lowMatch && lowMatch[1]) {
-                streams.push(new StreamResult({
+                streams.push(createStream({
                     url: lowMatch[1],
                     source: "xVideos · 360p / Low",
                     headers: {

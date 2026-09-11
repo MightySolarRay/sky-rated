@@ -5,10 +5,28 @@
         "Cookie": "hasVisited=1; accessAgeDisclaimerPH=1"
     };
 
+
+    function getBaseUrl() {
+        if (typeof manifest !== "undefined" && manifest && manifest.baseUrl) {
+            return manifest.baseUrl.replace(/\/+$/, "");
+        }
+        return "https://www.pornhub.com";
+    }
+
+    function createItem(s) {
+        try { return new MultimediaItem(s); } catch (e) { return s; }
+    }
+    function createEpisode(s) {
+        try { return new Episode(s); } catch (e) { return s; }
+    }
+    function createStream(s) {
+        try { return new StreamResult(s); } catch (e) { return s; }
+    }
+
     function fixUrl(url) {
         if (!url) return "";
         if (url.startsWith("//")) return "https:" + url;
-        if (url.startsWith("/")) return manifest.baseUrl + url;
+        if (url.startsWith("/")) return getBaseUrl() + url;
         return url;
     }
 
@@ -39,14 +57,14 @@
                 if (parts.length === 2) duration = parseInt(parts[0], 10) * 60 + parseInt(parts[1], 10);
             }
 
-            return new MultimediaItem({
+            return createItem({
                 title,
                 url: fullUrl,
                 posterUrl: poster,
                 type: "movie",
                 duration,
                 isAdult: false,
-                                headers: { "Referer": `${manifest.baseUrl}/` }
+                                headers: { "Referer": `${getBaseUrl()}/` }
             });
         } catch (e) {
             return null;
@@ -73,7 +91,7 @@
             const homeData = {};
             await Promise.all(categories.map(async (cat) => {
                 try {
-                    const res = await http_get(`${manifest.baseUrl}${cat.path}`, { headers: DEFAULT_HEADERS });
+                    const res = await http_get(`${getBaseUrl()}${cat.path}`, { headers: DEFAULT_HEADERS });
                     if (!res || !res.body) return;
                     const doc = await parseHtml(res.body);
                     const blocks = Array.from(doc.querySelectorAll("ul#videoSearchResult li.pcVideoListItem, div.gridWrapper li.pcVideoListItem"));
@@ -92,7 +110,7 @@
 
     async function search(query, cb) {
         try {
-            const searchUrl = `${manifest.baseUrl}/video/search?search=${encodeURIComponent(query)}`;
+            const searchUrl = `${getBaseUrl()}/video/search?search=${encodeURIComponent(query)}`;
             const res = await http_get(searchUrl, { headers: DEFAULT_HEADERS });
             if (!res || !res.body) {
                 return cb({ success: false, errorCode: "EMPTY_SEARCH", message: "No response received" });
@@ -142,7 +160,7 @@
 
             cb({
                 success: true,
-                data: new MultimediaItem({
+                data: createItem({
                     title,
                     url,
                     posterUrl: poster,
@@ -154,7 +172,7 @@
                                         cast: actors,
                     recommendations: recs,
                     episodes: [
-                        new Episode({
+                        createEpisode({
                             name: title || "Play Video",
                             url: url,
                             season: 1,
@@ -162,7 +180,7 @@
                             posterUrl: poster || ""
                         })
                     ],
-                    headers: { "Referer": `${manifest.baseUrl}/` }
+                    headers: { "Referer": `${getBaseUrl()}/` }
                 })
             });
         } catch (e) {
@@ -172,7 +190,7 @@
 
     async function loadStreams(url, cb) {
         try {
-            const res = await http_get(url, { headers: { ...DEFAULT_HEADERS, "Referer": `${manifest.baseUrl}/` } });
+            const res = await http_get(url, { headers: { ...DEFAULT_HEADERS, "Referer": `${getBaseUrl()}/` } });
             if (!res || !res.body) {
                 return cb({ success: false, errorCode: "STREAM_ERROR", message: "Failed to load page" });
             }
@@ -196,11 +214,11 @@
                 if (item.videoUrl) {
                     const quality = String(item.quality || "Auto");
                     const format = String(item.format || "").toLowerCase();
-                    streams.push(new StreamResult({
+                    streams.push(createStream({
                         url: item.videoUrl,
                         source: `PornHub · ${quality.toUpperCase()} (${format.toUpperCase()})`,
                         headers: {
-                            "Referer": `${manifest.baseUrl}/`,
+                            "Referer": `${getBaseUrl()}/`,
                             "User-Agent": DEFAULT_HEADERS["User-Agent"]
                         }
                     }));
